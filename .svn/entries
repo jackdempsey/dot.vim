@@ -1,0 +1,170 @@
+8
+
+dir
+9
+http://taf2vim.googlecode.com/svn/trunk
+http://taf2vim.googlecode.com/svn
+
+
+
+2008-11-03T20:24:31.253848Z
+9
+todd.fisher
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+64997869-a23b-0410-b710-7bbd86834167
+
+eruby.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+ca2cef8af07af20d012c4c81fb867ae1
+2007-10-04T03:33:31.023399Z
+2
+todd.fisher
+
+indent
+dir
+
+ragel.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+b993e81d2cfb2caef7b16ff8ac13d8d4
+2008-11-03T20:24:31.253848Z
+9
+todd.fisher
+
+syntax
+dir
+
+ftplugin
+dir
+
+.vimrc
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+022d08a8462dabd03b1e2e6c8b102d4e
+2008-11-03T20:24:31.253848Z
+9
+todd.fisher
+
+javascript.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+9220a1a0521cd9bdcb07326f8c46d25d
+2007-10-04T03:33:31.023399Z
+2
+todd.fisher
+has-props
+
+idl.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+6c040349d74daf9b56a0c1c9197f1233
+2007-10-04T03:33:31.023399Z
+2
+todd.fisher
+
+ftdetect
+dir
+
+js.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+18a54ab7fd8e6c9c35e5a517c49d15a0
+2007-11-08T00:36:04.153933Z
+4
+todd.fisher
+
+make.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+1b1ac9baa704a9db3b3e67320aff5e4b
+2008-06-10T11:46:26.437240Z
+6
+todd.fisher
+
+autoload
+dir
+
+compiler
+dir
+
+ftplugins
+dir
+
+cpp.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+418d5b41120fdea556d0fee63e5bf01a
+2007-10-04T03:33:31.023399Z
+2
+todd.fisher
+
+c.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+3edba7e9c540382c75b7f99bc642ba7e
+2008-11-03T20:24:31.253848Z
+9
+todd.fisher
+
+nginx.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+65cc656c50fe7cfc7d3b236a4b5ced84
+2008-10-16T00:31:18.055142Z
+7
+todd.fisher
+

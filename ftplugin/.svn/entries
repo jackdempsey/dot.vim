@@ -1,0 +1,52 @@
+8
+
+dir
+9
+http://taf2vim.googlecode.com/svn/trunk/ftplugin
+http://taf2vim.googlecode.com/svn
+
+
+
+2008-06-10T11:46:26.437240Z
+6
+todd.fisher
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+64997869-a23b-0410-b710-7bbd86834167
+
+eruby.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+ce55119d843de1d1cf114c16ecaaf9e9
+2008-06-10T11:46:26.437240Z
+6
+todd.fisher
+
+ruby.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+2f962cd21cc5f48fc9645f7ee60d6557
+2007-10-04T03:33:31.023399Z
+2
+todd.fisher
+

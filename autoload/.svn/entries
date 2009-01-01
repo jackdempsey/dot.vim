@@ -1,0 +1,40 @@
+8
+
+dir
+9
+http://taf2vim.googlecode.com/svn/trunk/autoload
+http://taf2vim.googlecode.com/svn
+
+
+
+2007-10-04T03:33:31.023399Z
+2
+todd.fisher
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+64997869-a23b-0410-b710-7bbd86834167
+
+rubycomplete.vim
+file
+
+
+
+
+2008-12-31T15:28:20.000000Z
+38600909dbb26d205d3122a8c1873f5b
+2007-10-04T03:33:31.023399Z
+2
+todd.fisher
+
