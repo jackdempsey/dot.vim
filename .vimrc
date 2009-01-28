@@ -2,6 +2,17 @@ if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
    set fileencodings=utf-8,latin1
 endif
 
+set autoindent
+set autowrite
+
+nnoremap <F2> :set invpaste paste?<CR>
+imap <F2> <C-O><F2>
+set pastetoggle=<F2>
+
+nmap <Tab> :bn<CR>
+nmap <s-tab> :bp<CR>
+map ,# :s/^/#/<CR>
+
 set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " allow backspacing over everything in insert mode
 "set ai                 " always set autoindenting on
@@ -10,6 +21,18 @@ set viminfo='20,\"50    " read/write a .viminfo file, don't store more
                         " than 50 lines of registers
 set history=512         " keep 512 lines of command line history
 set ruler               " show the cursor position all the time
+
+",v brings up my .vimrc
+",V reloads it -- making all changes active (have to save first)
+
+map ,v :sp $VIMRC<CR><C-W>_
+map <silent> ,V :source $VIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+" Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
+"nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
+"nnoremap <silent><C-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>
+nnoremap <silent><C-j> :set paste<CR>m`o<Esc>``:set nopaste<CR>
+nnoremap <silent><C-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 
 " Only do this part when compiled with support for autocommands
 if has("autocmd")
