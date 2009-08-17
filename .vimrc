@@ -5,6 +5,53 @@ endif
 set autoindent
 set autowrite
 
+set statusline=%n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+" To emulate the standard status line with 'ruler' set, use this:
+"
+"   set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+"
+" I've tweaked it a bit to show the buffer number on the left, and the total
+" number of lines on the right.  Also, show the current Python function in the
+" status line, if the pythonhelper.vim plugin exists and can be loaded.
+"
+" More detailed explanation:
+"   %n          -- buffer number
+"   %<%f        -- filename truncated from the beginning
+"   %h          -- [help] if this is a help buffer
+"   %m          -- [+] if modified
+"   %r          -- [RO] if readonly
+"   %1*         -- switch to highlight group User1
+"   %{}         -- embed the output of a vim function
+"   %*          -- switch to the normal highlighting
+"
+"   %=          -- right-align the rest
+"
+"   %-10.(...%) -- left-align the group inside %(...%)
+"   %l          -- line number
+"   %c          -- column
+"   %V          -- virtual column, if different from %c (displayed as -{num})
+"   %4L         -- right-aligned total number of lines in the buffer
+"   %P          -- position in the file as percentage
+
+
+au FileType * setl fo-=cro 
+
+" Make ',e' (in normal mode) give a prompt for opening files
+" in the same dir as the current buffer's file.
+if has("unix")
+  map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+else
+  map ,e :e <C-R>=expand("%:p:h") . "\\" <CR>
+endif
+
+" in the same dir as the current buffer's file.
+if has("unix")
+  map ,s :sp <C-R>=expand("%:p:h") . "/" <CR>
+else
+  map ,s :sp <C-R>=expand("%:p:h") . "\\" <CR>
+endif
+
+inoremap %/ <C-R>=expand("%:p:h")<CR>
 nnoremap <F2> :set invpaste paste?<CR>
 imap <F2> <C-O><F2>
 set pastetoggle=<F2>
@@ -25,8 +72,8 @@ set ruler               " show the cursor position all the time
 ",v brings up my .vimrc
 ",V reloads it -- making all changes active (have to save first)
 
-map ,v :sp $VIMRC<CR><C-W>_
-map <silent> ,V :source $VIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+map ,v :sp /Users/jack/.vimrc<CR><C-W>_
+map <silent> ,V :source /Users/jack/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " Ctrl-j/k deletes blank line below/above, and Alt-j/k inserts.
 "nnoremap <silent><C-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
@@ -57,6 +104,10 @@ if &term=="xterm"
 	set t_Sf=^[3%dm
 endif
 
+"set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
 
 set nocp
 set ignorecase
@@ -107,6 +158,8 @@ highlight preproc ctermfg=4
 highlight error ctermfg=1 ctermbg=NONE
 highlight errormsg ctermfg=1 ctermbg=NONE
 highlight constant ctermfg=7
+highlight Folded term=underline cterm=bold,underline ctermfg=7 ctermbg=0
+highlight Foldcolumn term=underline cterm=bold,underline ctermfg=7 ctermbg=0
 
 "au BufNewFile,BufRead *.m so $HOME/.vim/matlab.vim
 "au BufNewFile,BufRead *.m4 so $HOME/.vim/matlab.vim
@@ -165,9 +218,9 @@ set shellcmdflag=-c
 set shellquote=
 set shellslash          " Use the forward slash for expansion.
 set shellxquote="
-set shell=/bin/bash " Use the bash shell
-" set shellpipe=2>&1| tee
-" set shellredir=>%s 2>&1
+set shell=/opt/local/bin/zsh " Use the zsh shell
+"set shellpipe=2>&1| tee
+"set shellredir=>%s 2>&1
 
 map <C-n> :tabnew<cr>
 map <C-m> :tabclose<cr>
@@ -176,7 +229,6 @@ map <C-h> :tabprevious<cr>
 map <C-o> :tabonly<cr>
 map gF :sp<CR>gf
 
-"set path+=/home/taf2/project/portal-unified
 set suffixesadd=.rb
 set includeexpr+=substitute(v:fname,'s$','','g')
 "" or you can add substitution pattern s/ies$/y/g, s/ves$/f/g like this:
@@ -195,3 +247,18 @@ hi SpellBad term=reverse ctermfg=white ctermbg=darkred guifg=#ffffff guibg=#7f00
 hi SpellCap guifg=#ffffff guibg=#7f007f
 hi SpellRare guifg=#ffffff guibg=#00007f gui=underline
 hi SpellLocal term=reverse ctermfg=black ctermbg=darkgreen guifg=#ffffff guibg=#7f0000 gui=underline
+
+
+
+filetype plugin indent on
+let clj_highlight_builtins = 1
+let clj_highlight_contrib = 1
+let clj_paren_rainbow = 1
+
+"let clj_want_gorilla = 1
+
+"let vimclojure#NailgunClient = "/Users/jack/src/vimclojure-2.1.1/ng"
+
+
+
+hi clear Folded
