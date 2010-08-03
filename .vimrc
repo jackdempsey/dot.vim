@@ -2,8 +2,13 @@ if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
    set fileencodings=utf-8,latin1
 endif
 
+set nocompatible        " Use Vim defaults (much better!)
+
+silent! call pathogen#runtime_append_all_bundles()
+
 set autoindent
-set autowrite
+set autowrite " might comment out again at some point
+set hidden
 
 set statusline=%n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 " To emulate the standard status line with 'ruler' set, use this:
@@ -32,7 +37,7 @@ set statusline=%n:%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 "   %V          -- virtual column, if different from %c (displayed as -{num})
 "   %4L         -- right-aligned total number of lines in the buffer
 "   %P          -- position in the file as percentage
-
+set laststatus=2
 
 au FileType * setl fo-=cro 
 
@@ -60,7 +65,6 @@ nmap <Tab> :bn<CR>
 nmap <s-tab> :bp<CR>
 map ,# :s/^/#/<CR>
 
-set nocompatible        " Use Vim defaults (much better!)
 set bs=2                " allow backspacing over everything in insert mode
 "set ai                 " always set autoindenting on
 "set backup             " keep a backup file
@@ -185,7 +189,9 @@ au BufNewFile,BufRead nginx.conf,nginx/conf.d/*.conf so $HOME/.vim/nginx.vim
 "set viminfo='10,\"100,:20,%,nc:\\some\\place\\under\\Windoz\\_viminfo 
 " the following restores the position in a previously edited file
 set viminfo='10,\"100,:20,%,n~/.viminfo
-    au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
+
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif 
+
 "au BufNewFile,BufRead *.asm so $HOME/.simple/simple.vim
 
 " When starting to edit a file:
