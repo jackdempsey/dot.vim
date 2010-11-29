@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/jack/relevance/reputational-intelligence-services'
+let g:netrw_dirhist_2='/Users/jack/relevance/reputational-intelligence-services/app'
+let g:netrw_dirhist_3='/Users/jack/relevance/reputational-intelligence-services/app/views'
+let g:netrw_dirhist_4='/Users/jack/relevance/reputational-intelligence-services'
+let g:netrw_dirhist_5='/Users/jack/projects/euraeka/config/deploy'
